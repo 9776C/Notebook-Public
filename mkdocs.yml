@@ -1,0 +1,68 @@
+site_name: "VEX Engineering Notebook"
+# site_url: https://9776C.github.io/notebook-public/
+docs_dir: docs
+site_dir: site
+site_description: "Time-based engineering notebook for VEX"
+use_directory_urls: true
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: pink
+      accent: blue
+      toggle:
+        icon: material/weather-night
+
+nav:
+  - Home: pages/index.md
+  - Overview:
+      - Game Analysis:
+          - "Head-to-head general game analysis": pages/overview/Game analysis/Head-to-head general game analysis.md
+          - "Skills analysis": pages/overview/Game analysis/Skills analysis.md
+      - "Bot Interface": pages/overview/bot-interface.md
+      - "Example Drive Train": pages/overview/example_drive-train.md
+      - "Info": pages/overview/info.md
+      - "New Bot": pages/overview/new-bot.md
+  - Time-based:
+      - "Start → Bear": pages/time-based/01-start-bear/temp.md
+      - "Bear → Madison": 
+          - Overview: pages/time-based/02-bear-madison/code/00-overview.md
+          - Clean Up: pages/time-based/02-bear-madison/code/01-clean-up.md
+          - Intake Buttons: pages/time-based/02-bear-madison/code/02-intake-buttons.md
+      - "Madison → Wasatch": pages/time-based/03-mad-wasatch/temp.md
+      - "Wasatch → Future":
+          - New Code: pages/time-based/04-wasatch-future/new-code/00-overview.md
+          - New Descorer: pages/time-based/04-wasatch-future/new-descoring/00-overview.md
+          - New Drivetrain:
+              - Overview: pages/time-based/04-wasatch-future/new-drivetrain/00-overview.md
+              - Speed: pages/time-based/04-wasatch-future/new-drivetrain/01-speed.md
+              - Anti-push: pages/time-based/04-wasatch-future/new-drivetrain/02-anti-push.md
+              - PTO: pages/time-based/04-wasatch-future/new-drivetrain/03-PTO.md
+              - Parking: pages/time-based/04-wasatch-future/new-drivetrain/04-parking.md
+              - Size: pages/time-based/04-wasatch-future/new-drivetrain/05-size.md
+              - Misc/Build Practices: pages/time-based/04-wasatch-future/new-drivetrain/06-misc-and-build-practices.md
+              - Design: pages/time-based/04-wasatch-future/new-drivetrain/07-Design.md
+          - New Intake: pages/time-based/04-wasatch-future/new-intake/00-overview.md
+          - New Match Loader: pages/time-based/04-wasatch-future/new-match-loader/00-overview.md
+          - New Odom: pages/time-based/04-wasatch-future/new-odom/00-overview.md
+          - New Scoring:
+              - Overview: pages/time-based/04-wasatch-future/new-scoring/00-overview.md
+              - Arc Scoring: pages/time-based/04-wasatch-future/new-scoring/01-arc-scoring.md
+              - Linear Scoring: pages/time-based/04-wasatch-future/new-scoring/02-linear-scoring.md
+              - S Scoring: pages/time-based/04-wasatch-future/new-scoring/03-S-scoring.md
+              - C Scoring: pages/time-based/04-wasatch-future/new-scoring/04-C-scoring.md
+
+extra_css:
+  - custom.css
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.tasklist:   # <--- this enables task lists
+      custom_checkbox: true
+
+# plugins:
+#     - search
+#     - ezlinks:
+#         wikilinks: true

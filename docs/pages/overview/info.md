@@ -1,0 +1,1 @@
+This folder will contain stuff like main goals and progress and those things will be linked to _time based_ entries
