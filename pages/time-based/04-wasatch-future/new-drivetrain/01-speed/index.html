@@ -1,0 +1,2493 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Time-based engineering notebook for VEX">
+      
+      
+      
+      
+        <link rel="prev" href="../00-overview/">
+      
+      
+        <link rel="next" href="../02-anti-push/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Speed - VEX Engineering Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../custom.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#drivetrain-speed" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="VEX Engineering Notebook" class="md-header__button md-logo" aria-label="VEX Engineering Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VEX Engineering Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Speed
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label=""  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="VEX Engineering Notebook" class="md-nav__button md-logo" aria-label="VEX Engineering Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    VEX Engineering Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Game Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../overview/Game%20analysis/Head-to-head%20general%20game%20analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Head-to-head general game analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../overview/Game%20analysis/Skills%20analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../overview/bot-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bot Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../overview/example_drive-train/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Drive Train
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../overview/info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../overview/new-bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time-based
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Time-based
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01-start-bear/temp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start → Bear
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bear → Madison
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bear → Madison
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02-bear-madison/code/00-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02-bear-madison/code/01-clean-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clean Up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02-bear-madison/code/02-intake-buttons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intake Buttons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-mad-wasatch/temp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Madison → Wasatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wasatch → Future
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wasatch → Future
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../new-code/00-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../new-descoring/00-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Descorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Drivetrain
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    New Drivetrain
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speed
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Speed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identify:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brainstorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brainstorm:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Brainstorm:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gear-ratios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gear ratios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gear ratios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-wheels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4" wheels:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#325-wheels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.25" wheels:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#275-wheels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.75" wheels:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Select:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Select:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final options:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-anti-push/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anti-push
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-PTO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PTO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-parking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-size/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Size
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-misc-and-build-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc/Build Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../new-intake/00-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Intake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../new-match-loader/00-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Match Loader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../new-odom/00-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Odom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_7" id="__nav_3_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Scoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    New Scoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../new-scoring/00-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../new-scoring/01-arc-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arc Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../new-scoring/02-linear-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linear Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../new-scoring/03-S-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../new-scoring/04-C-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identify:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brainstorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brainstorm:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Brainstorm:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gear-ratios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gear ratios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gear ratios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-wheels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4" wheels:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#325-wheels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.25" wheels:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#275-wheels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.75" wheels:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Select:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Select:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final options:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="drivetrain-speed">Drivetrain speed</h1>
+<h2 id="identify">Identify:</h2>
+<p>We need a fast drivetrain, our current one is ~76in/s and it is ok, but it is just a little bit too fast (in my option; one of my team mates would beg to differ) I think the ideal is 70in/s</p>
+<p>Goal: speed of 70in/s</p>
+<p>Ideally we would have these things:
+- Only gear down 
+  - The all the motor cartridges are gearing down, if you were to gear up you would be gearing down then back up again, reducing efficiency.
+- Small wheels
+  - Smaller wheels mean more room for other things.
+- Good spacing</p>
+<h2 id="brainstorm">Brainstorm:</h2>
+<p>There are 3 motor speeds we can use, 100RPM, 200RPM, and 600RPM 
+None are great on there own so we need to have a gear ratio.</p>
+<h3 id="gear-ratios">Gear ratios</h3>
+<table>
+<thead>
+<tr>
+<th>Teeth</th>
+<th>12</th>
+<th>24</th>
+<th>36</th>
+<th>48</th>
+<th>60</th>
+<th>72</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>1:1</td>
+<td>1:2</td>
+<td>1:3</td>
+<td>1:4</td>
+<td>1:5</td>
+<td>1:6</td>
+</tr>
+<tr>
+<td>24</td>
+<td>2:1</td>
+<td>1:1</td>
+<td>2:3</td>
+<td>1:2</td>
+<td>2:5</td>
+<td>1:3</td>
+</tr>
+<tr>
+<td>36</td>
+<td>3:1</td>
+<td>3:2</td>
+<td>1:1</td>
+<td>3:4</td>
+<td>3:5</td>
+<td>1:2</td>
+</tr>
+<tr>
+<td>48</td>
+<td>4:1</td>
+<td>2:1</td>
+<td>4:3</td>
+<td>1:1</td>
+<td>4:5</td>
+<td>2:3</td>
+</tr>
+<tr>
+<td>60</td>
+<td>5:1</td>
+<td>5:2</td>
+<td>5:3</td>
+<td>5:4</td>
+<td>1:1</td>
+<td>5:6</td>
+</tr>
+<tr>
+<td>72</td>
+<td>6:1</td>
+<td>3:1</td>
+<td>2:1</td>
+<td>3:2</td>
+<td>6:5</td>
+<td>1:1</td>
+</tr>
+</tbody>
+</table>
+<p>Possible RPM with gear ratios:
+Geared down:</p>
+<table>
+<thead>
+<tr>
+<th>RPM</th>
+<th>1:1</th>
+<th>5:6</th>
+<th>4:5</th>
+<th>3:4</th>
+<th>2:3</th>
+<th>3:5</th>
+<th>1:2</th>
+<th>2:5</th>
+<th>1:3</th>
+<th>1:4</th>
+<th>1:5</th>
+<th>1:6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>100</td>
+<td>83.3</td>
+<td>80</td>
+<td>75</td>
+<td>66.7</td>
+<td>60</td>
+<td>50</td>
+<td>40</td>
+<td>33.3</td>
+<td>25</td>
+<td>20</td>
+<td>16.7</td>
+</tr>
+<tr>
+<td>200</td>
+<td>200</td>
+<td>166.7</td>
+<td>160</td>
+<td>150</td>
+<td>133.3</td>
+<td>120</td>
+<td>100</td>
+<td>80</td>
+<td>66.7</td>
+<td>50</td>
+<td>40</td>
+<td>33.3</td>
+</tr>
+<tr>
+<td>600</td>
+<td>600</td>
+<td>500</td>
+<td>480</td>
+<td>450</td>
+<td>400</td>
+<td>360</td>
+<td>300</td>
+<td>240</td>
+<td>200</td>
+<td>150</td>
+<td>120</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p>Geared up:</p>
+<table>
+<thead>
+<tr>
+<th>RPM</th>
+<th>6:1</th>
+<th>5:1</th>
+<th>4:1</th>
+<th>3:1</th>
+<th>5:2</th>
+<th>2:1</th>
+<th>5:3</th>
+<th>3:2</th>
+<th>4:3</th>
+<th>5:4</th>
+<th>6:5</th>
+<th>1:1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>600</td>
+<td>500</td>
+<td>400</td>
+<td>300</td>
+<td>250</td>
+<td>200</td>
+<td>166.7</td>
+<td>150</td>
+<td>133.3</td>
+<td>125</td>
+<td>120</td>
+<td>100</td>
+</tr>
+<tr>
+<td>200</td>
+<td>1200</td>
+<td>1000</td>
+<td>800</td>
+<td>600</td>
+<td>500</td>
+<td>400</td>
+<td>333.3</td>
+<td>300</td>
+<td>266.7</td>
+<td>250</td>
+<td>240</td>
+<td>200</td>
+</tr>
+<tr>
+<td>600</td>
+<td>3600</td>
+<td>3000</td>
+<td>2400</td>
+<td>1800</td>
+<td>1500</td>
+<td>1200</td>
+<td>1000</td>
+<td>900</td>
+<td>800</td>
+<td>750</td>
+<td>720</td>
+<td>600</td>
+</tr>
+</tbody>
+</table>
+<p>All possible speeds (in/s):</p>
+<table>
+<thead>
+<tr>
+<th>Wheel Ø</th>
+<th>16.7</th>
+<th>20</th>
+<th>25</th>
+<th>33.3</th>
+<th>40</th>
+<th>50</th>
+<th>60</th>
+<th>66.7</th>
+<th>75</th>
+<th>80</th>
+<th>83.3</th>
+<th>100</th>
+<th>120</th>
+<th>125</th>
+<th>133.3</th>
+<th>150</th>
+<th>160</th>
+<th>166.7</th>
+<th>200</th>
+<th>240</th>
+<th>250</th>
+<th>266.7</th>
+<th>300</th>
+<th>333.3</th>
+<th>360</th>
+<th>400</th>
+<th>450</th>
+<th>480</th>
+<th>500</th>
+<th>600</th>
+<th>720</th>
+<th>750</th>
+<th>800</th>
+<th>900</th>
+<th>1000</th>
+<th>1200</th>
+<th>1500</th>
+<th>1800</th>
+<th>2400</th>
+<th>3000</th>
+<th>3600</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4"</td>
+<td>3.5</td>
+<td>4.2</td>
+<td>5.2</td>
+<td>7.0</td>
+<td>8.4</td>
+<td>10.5</td>
+<td>12.6</td>
+<td>14.0</td>
+<td>15.7</td>
+<td>16.8</td>
+<td>17.4</td>
+<td>20.9</td>
+<td>25.1</td>
+<td>26.2</td>
+<td>27.9</td>
+<td>31.4</td>
+<td>33.5</td>
+<td>34.9</td>
+<td>41.9</td>
+<td>50.3</td>
+<td>52.3</td>
+<td>55.9</td>
+<td>62.8</td>
+<td><span style="color: #4caf50">69.8</span></td>
+<td><span style="color: #fdd835">75.4</span></td>
+<td>83.8</td>
+<td>94.2</td>
+<td>100.5</td>
+<td>104.7</td>
+<td>125.7</td>
+<td>150.8</td>
+<td>157.1</td>
+<td>167.6</td>
+<td>188.5</td>
+<td>209.4</td>
+<td>251.3</td>
+<td>314.2</td>
+<td>377.0</td>
+<td>502.7</td>
+<td>628.3</td>
+<td>754.0</td>
+</tr>
+<tr>
+<td>3.25"</td>
+<td>2.8</td>
+<td>3.4</td>
+<td>4.3</td>
+<td>5.7</td>
+<td>6.8</td>
+<td>8.5</td>
+<td>10.2</td>
+<td>11.3</td>
+<td>12.8</td>
+<td>13.6</td>
+<td>14.2</td>
+<td>17.0</td>
+<td>20.4</td>
+<td>21.3</td>
+<td>22.6</td>
+<td>25.5</td>
+<td>27.2</td>
+<td>28.3</td>
+<td>34.0</td>
+<td>40.8</td>
+<td>42.5</td>
+<td>45.3</td>
+<td>51.0</td>
+<td>56.6</td>
+<td>61.2</td>
+<td><span style="color: #4caf50">68.0</span></td>
+<td><span style="color: #f9a825">76.5</td>
+<td>81.6</td>
+<td>85.0</td>
+<td>102.0</td>
+<td>122.3</td>
+<td>127.5</td>
+<td>136.0</td>
+<td>153.0</td>
+<td>170.0</td>
+<td>204.0</td>
+<td>255.0</td>
+<td>306.0</td>
+<td>408.0</td>
+<td>510.0</td>
+<td>612.0</td>
+</tr>
+<tr>
+<td>2.75"</td>
+<td>2.4</td>
+<td>2.9</td>
+<td>3.6</td>
+<td>4.8</td>
+<td>5.8</td>
+<td>7.2</td>
+<td>8.6</td>
+<td>9.6</td>
+<td>10.8</td>
+<td>11.5</td>
+<td>12.0</td>
+<td>14.4</td>
+<td>17.3</td>
+<td>18.0</td>
+<td>19.2</td>
+<td>21.6</td>
+<td>23.0</td>
+<td>24.0</td>
+<td>28.8</td>
+<td>34.6</td>
+<td>36.0</td>
+<td>38.4</td>
+<td>43.2</td>
+<td>48.0</td>
+<td>51.8</td>
+<td>57.6</td>
+<td><span style="color: #f9a825">64.8</span></td>
+<td><span style="color: #4caf50">69.1</span></td>
+<td><span style="color: #4caf50">72.0</span></td>
+<td>86.4</td>
+<td>103.7</td>
+<td>108.0</td>
+<td>115.2</td>
+<td>129.6</td>
+<td>144.0</td>
+<td>172.8</td>
+<td>216.0</td>
+<td>259.2</td>
+<td>345.6</td>
+<td>432.0</td>
+<td>518.4</td>
+</tr>
+</tbody>
+</table>
+<p>With the goal of ~70in/s there are a few candidates</p>
+<h6 id="4-wheels">4" wheels:</h6>
+<table>
+<thead>
+<tr>
+<th>Speed</th>
+<th>Wheel RPM</th>
+<th>Motor RPM</th>
+<th>Gear ratio</th>
+<th>Gear1</th>
+<th>Gear2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>69.8in/s</td>
+<td>333.3</td>
+<td>200</td>
+<td>5:3 (up)</td>
+<td>60T</td>
+<td>36T</td>
+</tr>
+<tr>
+<td>75.4in/s</td>
+<td>360</td>
+<td>600</td>
+<td>3:5 (down)</td>
+<td>36T</td>
+<td>60T</td>
+</tr>
+</tbody>
+</table>
+<h6 id="325-wheels">3.25" wheels:</h6>
+<table>
+<thead>
+<tr>
+<th>Speed</th>
+<th>Wheel RPM</th>
+<th>Motor RPM</th>
+<th>Gear ratio</th>
+<th>Gear1</th>
+<th>Gear2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>68.0in/s</td>
+<td>400</td>
+<td>600</td>
+<td>2:3 (down)</td>
+<td>24T</td>
+<td>36T</td>
+</tr>
+<tr>
+<td>Alt1</td>
+<td>400</td>
+<td>600</td>
+<td>2:3 (down)</td>
+<td>48T</td>
+<td>72T</td>
+</tr>
+<tr>
+<td>Alt2</td>
+<td>400</td>
+<td>200</td>
+<td>2:1 (up)</td>
+<td>Many</td>
+<td>Many</td>
+</tr>
+<tr>
+<td>Alt3</td>
+<td>400</td>
+<td>100</td>
+<td>4:1 (up)</td>
+<td>48T</td>
+<td>12T</td>
+</tr>
+<tr>
+<td>76.5in/s</td>
+<td>450</td>
+<td>600</td>
+<td>3:4 (down)</td>
+<td>36T</td>
+<td>48T</td>
+</tr>
+</tbody>
+</table>
+<h6 id="275-wheels">2.75" wheels:</h6>
+<table>
+<thead>
+<tr>
+<th>Speed</th>
+<th>Wheel RPM</th>
+<th>Motor RPM</th>
+<th>Gear ratio</th>
+<th>Gear1</th>
+<th>Gear2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>64.8in/s</td>
+<td>450</td>
+<td>600</td>
+<td>3:4 (down)</td>
+<td>36T</td>
+<td>48T</td>
+</tr>
+<tr>
+<td>69.1in/s</td>
+<td>480</td>
+<td>600</td>
+<td>4:5 (down)</td>
+<td>48T</td>
+<td>60T</td>
+</tr>
+<tr>
+<td>72.0in/s</td>
+<td>500</td>
+<td>600</td>
+<td>5:6 (down)</td>
+<td>60T</td>
+<td>72T</td>
+</tr>
+<tr>
+<td>Alt1</td>
+<td>500</td>
+<td>200</td>
+<td>5:2 (up)</td>
+<td>60T</td>
+<td>24T</td>
+</tr>
+<tr>
+<td>Alt2</td>
+<td>500</td>
+<td>100</td>
+<td>5:1 (up)</td>
+<td>60T</td>
+<td>12T</td>
+</tr>
+</tbody>
+</table>
+<h2 id="select">Select:</h2>
+<p>Based on the ideal goals (gearing up, small wheels) these are the best options:</p>
+<table>
+<thead>
+<tr>
+<th>Wheel size</th>
+<th>Speed</th>
+<th>Wheel RPM</th>
+<th>Motor RPM</th>
+<th>Gear ratio</th>
+<th>Gear1</th>
+<th>Gear2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.75"</td>
+<td>69.1in/s</td>
+<td>480</td>
+<td>600</td>
+<td>4:5 (down)</td>
+<td>48T</td>
+<td>60T</td>
+</tr>
+<tr>
+<td>~~2.75"~~</td>
+<td>~~72.0in/s~~</td>
+<td>~~500~~</td>
+<td>~~600~~</td>
+<td>~~5:6 (down)~~</td>
+<td>~~60T~~</td>
+<td>~~72T~~</td>
+</tr>
+<tr>
+<td>3.25"</td>
+<td>~~68.0in/s~~</td>
+<td>~~400~~</td>
+<td>~~600~~</td>
+<td>~~2:3 (down)~~</td>
+<td>~~24T~~</td>
+<td>~~36T~~</td>
+</tr>
+<tr>
+<td>3.25"</td>
+<td>Alt1</td>
+<td>400</td>
+<td>600</td>
+<td>2:3 (down)</td>
+<td>48T</td>
+<td>72T</td>
+</tr>
+<tr>
+<td>3.25</td>
+<td>64.8in/s</td>
+<td>450</td>
+<td>600</td>
+<td>3:4 (down)</td>
+<td>36T</td>
+<td>48T</td>
+</tr>
+<tr>
+<td>Now to check spacing:</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>2.75" 480rpm:</p>
+<p><img alt="480 RPM 2.75in wheel" src="/images/time-based/04-wasatch-future/new-drivetrain/480rpm2.75in.jpeg" />
+or
+<img alt="480 RPM 2.75in wheel long" src="/images/time-based/04-wasatch-future/new-drivetrain/480rpm2.75in-long.png" />
+<a href="https://www.vexforum.com/t/catalogue-of-drive-gearings/109498">Image credit</a></p>
+<p>~~2.75" 500rpm:~~
+The gearing is so ugly that i cant find an image, and I'm too lazy to make one.
+Also the 72T gears are bigger than the 2.75" wheels so it would be driving on the gears</p>
+<p>3.25" 400rpm:</p>
+<p>48T:72T
+<img alt="400RPM 3.25in wheel" src="/images/time-based/04-wasatch-future/new-drivetrain/400rpm3.25in.jpeg" /><a href="https://www.vexforum.com/t/catalogue-of-drive-gearings/109498">Image credit</a></p>
+<p>24T:36T
+The gears are too small, the wheels would have to clip into each other</p>
+<p>3.25" 450rpm:
+<img alt="400RPM 3.25in wheel" src="/images/time-based/04-wasatch-future/new-drivetrain/450rpm3.25in.jpeg" />
+<a href="https://www.vexforum.com/t/catalogue-of-drive-gearings/109498">Image credit</a></p>
+<h4 id="final-options">Final options:</h4>
+<table>
+<thead>
+<tr>
+<th>Wheel size</th>
+<th>Speed</th>
+<th>Wheel RPM</th>
+<th>Motor RPM</th>
+<th>Gear ratio</th>
+<th>Gear1</th>
+<th>Gear2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.75"</td>
+<td>69.1in/s</td>
+<td>480</td>
+<td>600</td>
+<td>4:5 (down)</td>
+<td>48T</td>
+<td>60T</td>
+</tr>
+<tr>
+<td>3.25"</td>
+<td>68.0in/s</td>
+<td>400</td>
+<td>600</td>
+<td>2:3 (down)</td>
+<td>48T</td>
+<td>72T</td>
+</tr>
+<tr>
+<td>3.25</td>
+<td>64.8in/s</td>
+<td>450</td>
+<td>600</td>
+<td>3:4 (down)</td>
+<td>36T</td>
+<td>48T</td>
+</tr>
+</tbody>
+</table>
+<p>I would like the smaller wheels and i see more potential in the 2.75" option, and it is closer to the ideal 70in/s.</p>
+<p>The chosen wheel/rpm is: <strong>2.75" 480rpm</strong></p>
+<p>But there is a large problem
+It would be really hard to fit in 5 un wide (more in <a href="../05-size/">Size</a>) and if it is wider than 5 un then screws aren't long enough to bridge the gap for <a href="../06-misc-and-build-practices/#Screw%20Joints">Screw Joints</a>.</p>
+<p>The <strong><em>real</em></strong> chosen speed is:
+<strong>3.25" 450rpm</strong></p>
+<div class="codehilite"><pre><span></span><code>Daren 12/08/25
+
+
+
+Daren 12/08/25-12/14/25
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

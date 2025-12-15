@@ -1,0 +1,111 @@
+/* Good background */
+.md-main {
+    background-color: #000000;
+}
+/* Main content border */
+.md-content {
+    background-color: #000000; /* already black */
+    color: #e0e0e0;
+    border: 2px solid #7abaf2; /* blue border */
+    border-radius: 8px; /* optional rounded corners */
+    padding: 1.5em; /* add some spacing inside the border */
+    margin: 1em auto; /* center content with some vertical spacing */
+    max-width: 1200px; /* optional, keeps content from stretching too far on large screens */
+}
+
+
+/* Links */
+a {
+    color: #6189f9;
+}
+a:hover {
+    color: #80b5ff;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #b99cff;
+}
+
+/* Sidebar */
+.md-sidebar {
+    background-color: #000000;
+    color: #e0e0e0;
+}
+
+/* Code blocks */
+.md-code, pre code {
+    background-color: #111111;
+    color: #80d0ff;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 3px solid #ff94c2;
+    color: #e0e0e0;
+    background-color: #0a0a0a;
+    padding: 0.5em 1em;
+    margin-left: 0;
+}
+
+/* Tables */
+table {
+    color: #e0e0e0;
+    border-color: #80d0ff;
+}
+th {
+    background-color: #0a0a0a;
+}
+td {
+    background-color: #111111;
+}
+
+/* Badges/buttons */
+.md-badge {
+    background-color: #69e8df;
+    color: #000000;
+}
+
+.md-typeset p a {
+    color: #7af2d0;
+}
+.md-typeset p a:hover {
+    color: #80eaff;
+}
+
+/* Target links inside main content paragraphs */
+.md-typeset p a {
+    color: #7a7ef2;       /* blue links */
+    text-decoration: none; /* optional: remove underline */
+}
+
+.md-typeset p a:hover {
+    color: #80ffea;       /* purple hover */
+    text-decoration: underline; /* optional: show underline on hover */
+}
+
+/* Sidebar active link */
+.md-sidebar .md-nav__link.md-nav__link--active {
+    color: #94ffaf;       /* green for active page */
+    font-weight: bold;
+}
+
+/* Sidebar links that have been visited/passed */
+.md-sidebar .md-nav__link.md-nav__link--passed {
+    color: #7af2c6;       /* darker blue for completed pages */
+}
+
+/* Sidebar links hover */
+.md-sidebar .md-nav__link:hover {
+    color: #80d0ff;       /* blue on hover */
+}
+
+/* Remove gradients and shadows in primary sidebar nav */
+.md-sidebar.md-sidebar--primary,
+.md-sidebar.md-sidebar--primary .md-nav,
+.md-sidebar.md-sidebar--primary .md-nav__list {
+    background-image: none !important;  /* remove any gradients */
+    box-shadow: none !important;        /* remove any shadow */
+    background-color: #000000 !important; /* solid black */
+}
+
