@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#code-structure" class="md-skip">
+        <a href="#code-functions" class="md-skip">
           Skip to content
         </a>
       
@@ -869,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../drivetrain/08-design/" class="md-nav__link">
+      <a href="../drivetrain/design/" class="md-nav__link">
         
   
   
@@ -998,6 +998,34 @@
     
   
     Arc Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scoring/arc-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arc Implementation
   
 
     
@@ -1355,7 +1383,122 @@
 
 
 <p>We are rebuilding the bot. The new bot will function differently from the current bot, therefore, the code needs to change.</p>
+<h1 id="code-functions">Code Functions:<a class="headerlink" href="#code-functions" title="Permanent link">¶</a></h1>
+<p>(These are the operations the code will need to complete)</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Analog stick driving<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> (Possibly go over the exponent, dead-zone, etc. tuning w/ zach)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> (Possibly a way to choose what format, depending on driver)</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Intake, on and off <ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> (Possibly a way to "spit it out" the front)</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Automatic color sorting <ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Keep track of how many blocks of each color are in each tube</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> (possibly a way to choose what color goes in what tube)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> (possibly an automatic "remove wrong color" system)<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> (A way to set current color)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Lever scoring<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> A way to choose which barrel</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> A way to choose how many get scored<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> All button?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Adjust amount to launch buttons? </li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Rare case, intentional non sorted block automatic handling system? (one chamber completely full, started to fill the other one with same color, accidentally picked up wrong color)</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> (Code for any other mechanisms added to the bot)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Autonomous<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Odometry<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> PID tuning :shudder: </li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> (Wall aligners?)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Skills route<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Realign spots?</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Match route<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Realign spots?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> (2, not 4 because the field has perfect origin symmetry)<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> (A way to set which side/color we are on)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="code-structure">Code Structure:<a class="headerlink" href="#code-structure" title="Permanent link">¶</a></h1>
+<h2 id="maincpp">main.cpp:<a class="headerlink" href="#maincpp" title="Permanent link">¶</a></h2>
+<p>Main file, all things start here</p>
+<ul>
+<li>All of the port definitions</li>
+<li>All of the odometry definitions</li>
+</ul>
+<h3 id="void-initialize">void initialize()<a class="headerlink" href="#void-initialize" title="Permanent link">¶</a></h3>
+<ul>
+<li>Standard initialize function, initialize screen, any sensors, etc.</li>
+<li>Handle what "side" and "color" we are before autonomous and color sorting functions</li>
+</ul>
+<h3 id="wallrecalibrate">(wallRecalibrate)<a class="headerlink" href="#wallrecalibrate" title="Permanent link">¶</a></h3>
+<ul>
+<li>If implemented, will scan distance from wall(s) and recalibrate current odometry position accordingly</li>
+<li>Useful for after going over a park zone</li>
+</ul>
+<h3 id="void-autonomous">void autonomous()<a class="headerlink" href="#void-autonomous" title="Permanent link">¶</a></h3>
+<ul>
+<li>Autonomous function</li>
+<li>Has 2 routes / side specific motions</li>
+<li>Will be done through odometry</li>
+</ul>
+<h3 id="void-opcontrol">void opControl()<a class="headerlink" href="#void-opcontrol" title="Permanent link">¶</a></h3>
+<ul>
+<li>Handles stick inputs -&gt; driver control</li>
+<li>Calls a function to update the buttons</li>
+</ul>
+<h2 id="buttonstatehcpp">buttonState.h/cpp:<a class="headerlink" href="#buttonstatehcpp" title="Permanent link">¶</a></h2>
+<p>Handles all button states</p>
+<ul>
+<li>Define button types</li>
+</ul>
+<h3 id="struct-buttonset">struct buttonSet<a class="headerlink" href="#struct-buttonset" title="Permanent link">¶</a></h3>
+<ul>
+<li>A whole bunch of bools telling the active state of the buttons</li>
+<li>bool a = false; bool b = false; etc. </li>
+</ul>
+<h3 id="struct-buttontypes">struct buttonTypes<a class="headerlink" href="#struct-buttontypes" title="Permanent link">¶</a></h3>
+<ul>
+<li>Defines the button types</li>
+</ul>
+<h3 id="struct-typeset">struct typeSet<a class="headerlink" href="#struct-typeset" title="Permanent link">¶</a></h3>
+<ul>
+<li>Defines the type for each button</li>
+<li>Allows for multiple "sets" of definitions</li>
+</ul>
+<h3 id="buttonset-updatebuttonscontroller-parameter-int-typeset-0">buttonSet updateButtons(controller parameter, int  typeSet = 0)<a class="headerlink" href="#buttonset-updatebuttonscontroller-parameter-int-typeset-0" title="Permanent link">¶</a></h3>
+<ul>
+<li>For each button:<ul>
+<li>Gets button type by cross-referencing the int (which will be defined as something else) with the corresponding typeSet struct</li>
+<li>Gets current button state</li>
+<li>Complicated if else cases to decide whether the button should report active or not </li>
+<li>Sets the report inside a buttonSet</li>
+</ul>
+</li>
+<li>After all buttons have been done, return the buttonSet. </li>
+</ul>
+<h3 id="possibly-some-lifo-priority-stack-handling-if-needed">(possibly some (LIFO) priority stack handling if needed)<a class="headerlink" href="#possibly-some-lifo-priority-stack-handling-if-needed" title="Permanent link">¶</a></h3>
+<h3 id="possibly-handle-more-button-related-tasks">(possibly handle more button related tasks)<a class="headerlink" href="#possibly-handle-more-button-related-tasks" title="Permanent link">¶</a></h3>
+<h2 id="blockshcpp">blocks.h/cpp:<a class="headerlink" href="#blockshcpp" title="Permanent link">¶</a></h2>
+<p>Handles block counting and sorting</p>
+<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 
 
 

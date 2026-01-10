@@ -869,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../drivetrain/08-design/" class="md-nav__link">
+      <a href="../drivetrain/design/" class="md-nav__link">
         
   
   
@@ -1018,6 +1018,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../scoring/arc-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arc Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../scoring/linear-scoring/" class="md-nav__link">
         
   
@@ -1116,6 +1144,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1158,6 +1188,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1166,10 +1198,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#identify" class="md-nav__link">
+  <a href="#constraints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Identify
+        Constraints:
       
     </span>
   </a>
@@ -1377,6 +1409,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1385,10 +1419,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#identify" class="md-nav__link">
+  <a href="#constraints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Identify
+        Constraints:
       
     </span>
   </a>
@@ -1415,10 +1449,71 @@
   
 
 
-  <h1>Intake</h1>
-
-<h2 id="identify">Identify<a class="headerlink" href="#identify" title="Permanent link">¶</a></h2>
-<p>our last intake was pretty good, </p>
+<h1 id="identify">Identify:<a class="headerlink" href="#identify" title="Permanent link">¶</a></h1>
+<p>We need a good reliable intake.</p>
+<h2 id="constraints">Constraints:<a class="headerlink" href="#constraints" title="Permanent link">¶</a></h2>
+<ul>
+<li>No jamming</li>
+<li>Quick</li>
+<li><strong>Work with <a href="../color-sorting/">color sorting</a></strong></li>
+<li>Light</li>
+<li>Not get tangled</li>
+<li>Get blocks from wall well</li>
+</ul>
+<p>Our old bot uses rubber bands on large sprockets to intake blocks. It was in a fixed position; it doesn't move up and down to let blocks in, the rubber bands just deform around the block. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>TODO: find where to put this
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>For the new intake we are thinking of either sticking with the rubber band intake, or switching to a flex wheel intake. a flex wheel intake is harder to make, as it has tighter tolerances of actually working, where rubber band intake requires almost no tuning. lets list out all the pros and cons
+</code></pre></div>
+<h1 id="brainstorm">Brainstorm:<a class="headerlink" href="#brainstorm" title="Permanent link">¶</a></h1>
+<h2 id="rubber-band-intake">Rubber band intake<a class="headerlink" href="#rubber-band-intake" title="Permanent link">¶</a></h2>
+<p>This intake type uses sprockets and rubber bands to make a spinning drum that intakes the blocks.
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/old-intake.png" data-desc-position="bottom"><img alt="old intake" src="images/old-intake.png"></a></p>
+<h3 id="pros">Pros<a class="headerlink" href="#pros" title="Permanent link">¶</a></h3>
+<ul>
+<li>Simple</li>
+<li>Little required tuning</li>
+<li>Can be static (not move up and down)</li>
+<li>Doesn't rely solely on friction, the gaps in the rubber bands act as little <em>"slots"</em> for the blocks to go into.</li>
+</ul>
+<h3 id="cons">Cons<a class="headerlink" href="#cons" title="Permanent link">¶</a></h3>
+<ul>
+<li>Tangles with other robots easily</li>
+<li>Rubber bands break and it goes through a lot of them</li>
+<li>Jams if not done right (block can get stuck against the sprockets)</li>
+</ul>
+<h2 id="flex-wheel-intake">Flex wheel intake<a class="headerlink" href="#flex-wheel-intake" title="Permanent link">¶</a></h2>
+<p>This intake type uses a line of flex-wheels to grip the blocks and intake them 
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/flex-intake.png" data-desc-position="bottom"><img alt="flex wheel intake" src="images/flex-intake.png"></a>
+<a href="https://www.youtube.com/watch?v=w0BvoH0nYS4">Credit</a></p>
+<h3 id="pros_1">Pros<a class="headerlink" href="#pros_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>No constant replacements needed</li>
+<li>Generally smaller than a rubber band intake</li>
+<li>Harder to jam</li>
+</ul>
+<h3 id="cons_1">Cons<a class="headerlink" href="#cons_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>Once the flex wheels get dirty/dusty it barely works</li>
+<li>Need to be mounted on a pivot (move up and down)</li>
+</ul>
+<h2 id="chain-flap-intake">Chain flap intake<a class="headerlink" href="#chain-flap-intake" title="Permanent link">¶</a></h2>
+<p>This intake method uses sprockets with rubber-flap chains like so:
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/flappy-intake.png" data-desc-position="bottom"><img alt="flappy intake" src="images/flappy-intake.png"></a></p>
+<h3 id="pros_2">Pros<a class="headerlink" href="#pros_2" title="Permanent link">¶</a></h3>
+<ul>
+<li>Doesn't need replacing</li>
+<li>Doesn't matter if it is dirty (doesn't rely on friction to much)</li>
+</ul>
+<h3 id="cons_2">Cons<a class="headerlink" href="#cons_2" title="Permanent link">¶</a></h3>
+<ul>
+<li>Not as affective as rubber band or flex wheel intakes (when they are working well)</li>
+<li>It is "floppy"</li>
+<li>To be effective it needs to be big</li>
+</ul>
+<h1 id="select">Select:<a class="headerlink" href="#select" title="Permanent link">¶</a></h1>
+<p>after considering all of these options, we have decided to go with a flex wheel intake. the main reason for this was because </p>
+<div class="highlight"><pre><span></span><code>Zach 12/14/2025,1/7/2026  Daren 1/8/2026
+</code></pre></div>
 
 
 

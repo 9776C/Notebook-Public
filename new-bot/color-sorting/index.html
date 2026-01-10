@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#identify" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -864,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../drivetrain/08-design/" class="md-nav__link">
+      <a href="../drivetrain/design/" class="md-nav__link">
         
   
   
@@ -993,6 +998,34 @@
     
   
     Arc Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scoring/arc-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arc Implementation
   
 
     
@@ -1167,6 +1200,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Sorting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1184,6 +1237,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-we-need-to-color-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do we need to color sort?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1326,6 +1420,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-we-need-to-color-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do we need to color sort?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1345,9 +1471,69 @@
   
 
 
-  <h1>Color Sorting</h1>
-
-
+<h1 id="identify">Identify:<a class="headerlink" href="#identify" title="Permanent link">¶</a></h1>
+<h2 id="why-do-we-need-to-color-sort">Why do we need to color sort?<a class="headerlink" href="#why-do-we-need-to-color-sort" title="Permanent link">¶</a></h2>
+<p>Our bot's scoring and storage mechanism is 2 chambers. We chose to use 2 chambers because it has a few advantages over a regular, single chamber lever bot. One of these benefits is simply more storage space. The other main benefit, however, excites me more; having 2 separate chambers allows us to separate the red blocks from the blue blocks. </p>
+<p>Any bot without a color sorting mechanism runs the risk of scoring points for the opponent and their options are limited to: avoid the wrong color as much as possible, carefully try to score their own color while trying to remove the opposing color, or just give up and score the opponent some points. </p>
+<p>A bot with a color sorting system can simply pick up blocks and not worry about the bad ones. This saves a lot of time and does not score points for the opponent.  </p>
+<p>Not all lever bot designs that want to color sort need 2 barrels! In fact, I have not seen a single lever bot with 2 barrels, but I have seen plenty that can color sort. Most bots, lever or otherwise, simply eject the wrong color during or just after intaking. We considered this as well. Ignoring the benefit of increased storage, there is still another advantage our double chamber has over regular color sorting; The ability to <strong>keep</strong> the opposite color. </p>
+<p>Why would we want to keep the wrong color? Perhaps we want to stop the other team from getting more blocks? No, It is too hard to monopolize blocks, too easy to descore, and 5-7 blocks wouldn't make much of a difference. Perhaps we want to use them to strategically position our blocks in the control zones? No, a single lever design that could adjust the block lineup would be better suited for that. Besides, that gives points to the other side, it is just as easy to pick up more of our own blocks. There appears to be no logical reason to want to hold on to your opponent's blocks in match! That is because there is not a good enough reason in a <strong>match</strong> to justify a double chamber design. The reason comes not from a match, but from the <strong>skills challenge.</strong> </p>
+<p>This is the is scoring for the skills challenge:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Each Block Scored in a Goal</td>
+<td>1 Point</td>
+</tr>
+<tr>
+<td>Each filled Control Zone in a Long Goal</td>
+<td>5 Points</td>
+</tr>
+<tr>
+<td>Each filled Control Zone in a Center Goal</td>
+<td>10 Points</td>
+</tr>
+<tr>
+<td>Each Cleared Park Zone</td>
+<td>5 Points</td>
+</tr>
+<tr>
+<td>Each Cleared Loader</td>
+<td>5 Points</td>
+</tr>
+<tr>
+<td>Parked Robot</td>
+<td>15 Points</td>
+</tr>
+<tr>
+<td>There is 2 long goals and 2 center goals. That is 30 points for just the goals (not including the points for the individual blocks).  The rule book explains these 2 categories as follows:</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>"A Control Zone is considered filled if it ends the Match containing its maximum number of Scored Blocks, and if all Blocks in that Control Zone are the same color (e.g., all are blue, or all are red).
+- i. In a Robot Skills Match, a Center Goal Control Zone must contain at least seven (7) Blocks to be considered filled.
+- ii. A Long Goal must include one or more of the following to be considered filled in a Robot Skills Match:
+    1. Three Blocks of the same color fully contained between the inner edges of the Control Zone tape lines. 
+    2. Four Blocks of the same color fully contained between the outer edges of the Control Zone tape lines."</p>
+<p>This means that in order to get these 30 points from control zones, all blocks in the control zone needs to be the same color. For a bot without color sorting, these 30 points are very difficult to get. With a regular color sorting bot, it becomes a little easier. But with our bot separates and keeps both colors, making this much easier. This allows us to in theory get very good skills scores, both autonomous and driver control.</p>
+<h2 id="requirements">Requirements:<a class="headerlink" href="#requirements" title="Permanent link">¶</a></h2>
+<p>Enough about why, what do we actually need from this system?</p>
+<ul>
+<li>It needs to fit in the bot (needs to be small and compact)</li>
+<li>It needs to accurately tell if there is a red block, blue block, or no block<ul>
+<li>(this requires good light and distance conditions)</li>
+</ul>
+</li>
+<li>It needs to be be able choose which chamber the block needs to go to and move it accordingly</li>
+</ul>
+<h1 id="brainstorm">Brainstorm:<a class="headerlink" href="#brainstorm" title="Permanent link">¶</a></h1>
 
 
 

@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://9776C.github.io/Notebook-Public/new-bot/scoring/">
       
       
-        <link rel="prev" href="../drivetrain/08-design/">
+        <link rel="prev" href="../drivetrain/design/">
       
       
         <link rel="next" href="arc-scoring/">
@@ -869,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../drivetrain/08-design/" class="md-nav__link">
+      <a href="../drivetrain/design/" class="md-nav__link">
         
   
   
@@ -1122,16 +1122,38 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#scoring-methods-under-consideration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoring Methods Under Consideration:
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#scoring-methods-under-consideration" class="md-nav__link">
+  <a href="#select" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scoring Methods Under Consideration:
+        Select:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation:
       
     </span>
   </a>
@@ -1162,6 +1184,34 @@
     
   
     Arc Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="arc-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arc Implementation
   
 
     
@@ -1597,16 +1647,38 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#scoring-methods-under-consideration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoring Methods Under Consideration:
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#scoring-methods-under-consideration" class="md-nav__link">
+  <a href="#select" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scoring Methods Under Consideration:
+        Select:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation:
       
     </span>
   </a>
@@ -1638,7 +1710,7 @@
 <h3 id="problems-with-old-scoring-and-intake">Problems with Old Scoring (and Intake):<a class="headerlink" href="#problems-with-old-scoring-and-intake" title="Permanent link">¶</a></h3>
 <p>Our past bot used rollers to pull blocks from the basket and score them. This method worked decently well and was able to move a lot of blocks pretty quickly. But had some issues:</p>
 <ol>
-<li><strong>Rubber band entanglement</strong> - The intake relied on rubber bands, which were really good at intaking but would get entangled with other bots. This would either:<ul>
+<li><strong>Rubber band entanglement</strong> - The intake (and output) relied on rubber bands, which were really good at intaking but would get entangled with other bots. This would either:<ul>
 <li>Break the rubber bands completely</li>
 <li>Make our bot stuck to the opponent for the rest of the match</li>
 </ul>
@@ -1684,16 +1756,23 @@
 <li><strong>Very fast</strong> - SPEED </li>
 </ul>
 <hr>
-<h2 id="scoring-methods-under-consideration">Scoring Methods Under Consideration:<a class="headerlink" href="#scoring-methods-under-consideration" title="Permanent link">¶</a></h2>
+<h3 id="scoring-methods-under-consideration">Scoring Methods Under Consideration:<a class="headerlink" href="#scoring-methods-under-consideration" title="Permanent link">¶</a></h3>
 <ol>
 <li><a href="arc-scoring/">Arc Scoring</a> - Arc/lever mechanism analysis</li>
 <li><a href="linear-scoring/">Linear Scoring</a> - Linear elastic-powered system</li>
 <li><a href="S-scoring/">S Scoring</a> - S-shaped path variation</li>
-<li>
-<p><a href="C-scoring/">C Scoring</a> - C-shaped path variation</p>
-<p>Zach/Daren 12/10/2025-12/12/2025</p>
-</li>
+<li><a href="C-scoring/">C Scoring</a> - C-shaped path variation</li>
 </ol>
+<h2 id="select">Select:<a class="headerlink" href="#select" title="Permanent link">¶</a></h2>
+<p>Based on the ideas discussed in the above sections; the best option looks to be an <strong>Arc-Scoring lever</strong> as it: 
+- Utilizes the <a href="../drivetrain/PTO/">PTO</a> more effectively than linear options 
+- Can fit <strong>12 blocks</strong> (double standard capacity with dual chamber) 
+- Doesn't have cooldown between uses.</p>
+<h2 id="implementation">Implementation:<a class="headerlink" href="#implementation" title="Permanent link">¶</a></h2>
+<p><strong><a href="arc-implementation/">Arc-Scoring Implementation</a></strong></p>
+<div class="highlight"><pre><span></span><code>  Zach 12/10/2025-12/12/2025 
+  Daren 12/10/2025-12/12/2025, 1/7/2026
+</code></pre></div>
 
 
 

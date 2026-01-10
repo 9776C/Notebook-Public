@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#identify" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -814,6 +819,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aligner
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -831,6 +856,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -872,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08-design/" class="md-nav__link">
+      <a href="../design/" class="md-nav__link">
         
   
   
@@ -1001,6 +1067,34 @@
     
   
     Arc Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scoring/arc-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arc Implementation
   
 
     
@@ -1326,6 +1420,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1345,9 +1471,35 @@
   
 
 
-  <h1>Aligner</h1>
-
-<p>bob</p>
+<h1 id="identify">Identify<a class="headerlink" href="#identify" title="Permanent link">¶</a></h1>
+<p>Our robot needs a reliable way to align with long goals for consistent auton and faster aligntment during driver control. Manual alignment takes too much time and introduces human error.</p>
+<h2 id="goal">Goal:<a class="headerlink" href="#goal" title="Permanent link">¶</a></h2>
+<p>Create a mechanism that allows the robot to quickly and accurately align itself to field elements.</p>
+<h2 id="requirements">Requirements:<a class="headerlink" href="#requirements" title="Permanent link">¶</a></h2>
+<ul>
+<li>Must not interfere with normal driving</li>
+<li>Should be passive (no motors/pneumatics if possible)</li>
+<li>Should work from multiple approach angles</li>
+<li>Compact and lightweight</li>
+<li>Must not prevent other mechanisms from functioning</li>
+</ul>
+<h1 id="brainstorm">Brainstorm<a class="headerlink" href="#brainstorm" title="Permanent link">¶</a></h1>
+<h2 id="alignment-methods">Alignment Methods:<a class="headerlink" href="#alignment-methods" title="Permanent link">¶</a></h2>
+<h3 id="triangle">Triangle<a class="headerlink" href="#triangle" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/aligner-1.png" data-desc-position="bottom"><img alt="Aligner" src="../images/aligner-1.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/aligner-2.png" data-desc-position="bottom"><img alt="aligner-2" src="../images/aligner-2.png"></a>
+<a href="https://media.discordapp.net/attachments/1455573072345038878/1455577989537333290/image.png?ex=695e76a4&amp;is=695d2524&amp;hm=d0ee6d9f3ebd3b284fb70789127f2403f476e45d4b5908fbac56f1bdb822503c&amp;=&amp;format=webp&amp;quality=lossless&amp;width=954&amp;height=606">Credit</a> (<a href="https://discord.com/channels/1272763279739191296/1455573072345038878/1455577989856366684">@Nico | 8728A on the "Robolytics" discord server</a>)</p>
+<p>This method that I call the "triangle" method  uses a "piece" of plastic or metal near the ground that mirrors the angle of the long goal and help keep it aligned.
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/alignment.png" data-desc-position="bottom"><img alt="alignment" src="../images/alignment.png"></a></p>
+<h3 id="crown">Crown<a class="headerlink" href="#crown" title="Permanent link">¶</a></h3>
+<p>This method that I call the "crown" method  uses a piece of plastic higher off the ground and align near the top of the long goal.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/aligner-4.png" data-desc-position="bottom"><img alt="" src="../images/aligner-4.png"></a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/aligner-3.png" data-desc-position="bottom"><img alt="" src="../images/aligner-3.png"></a></p>
+<h1 id="select">Select<a class="headerlink" href="#select" title="Permanent link">¶</a></h1>
+<h2 id="chosen-design">Chosen Design:<a class="headerlink" href="#chosen-design" title="Permanent link">¶</a></h2>
+<h3 id="secondary">Secondary:<a class="headerlink" href="#secondary" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>Daren 1/5/2026-1/6/2026
+</code></pre></div>
 
 
 

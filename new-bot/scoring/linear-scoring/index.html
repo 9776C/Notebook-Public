@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://9776C.github.io/Notebook-Public/new-bot/scoring/linear-scoring/">
       
       
-        <link rel="prev" href="../arc-scoring/">
+        <link rel="prev" href="../arc-implementation/">
       
       
         <link rel="next" href="../S-scoring/">
@@ -869,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../drivetrain/08-design/" class="md-nav__link">
+      <a href="../../drivetrain/design/" class="md-nav__link">
         
   
   
@@ -998,6 +998,34 @@
     
   
     Arc Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arc-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arc Implementation
   
 
     
@@ -1480,7 +1508,7 @@
 <h1 id="brainstorm">Brainstorm:<a class="headerlink" href="#brainstorm" title="Permanent link">¶</a></h1>
 <p>One way to score blocks is using a linear mechanism to push the blocks. My idea is a little difficult to describe in words so here is a diagram:
 <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/linear-scoring-diagram.png" data-desc-position="bottom"><img alt="diagram" src="../images/linear-scoring-diagram.png"></a></p>
-<p>In the block chamber we have a liner rail and slide and on that slide we have something to push the blocks out the end. The slide would have elastic string attached to it that would be wound up but the PTO.</p>
+<p>In the block chamber we have a liner rail and slide and on that slide we have something to push the blocks out the end. The slide would have elastic string attached to it that would be wound up by the PTO.</p>
 <p>There would be 3 main states:</p>
 <p>State 1:
 <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/linear-state1.png" data-desc-position="bottom"><img alt="state 1" src="../images/linear-state1.png"></a>
@@ -1497,15 +1525,17 @@ State 2 is vary similar to state 2 except that the PTO has wound up the elastic 
 <li>Doesn't take up a lot of additional space</li>
 <li>Doesn't require a motor to actively use (to score blocks)</li>
 <li>Can release a lot more energy at once than a motor directly (it just takes time to wind up, the limit isn't torque it's time)</li>
-<li>Is extremely fast</li>
+<li>Is extremely fast at scoring</li>
 <li>can be very lightweight</li>
 </ul>
 <h3 id="cons">Cons:<a class="headerlink" href="#cons" title="Permanent link">¶</a></h3>
 <ul>
 <li>Less efficient block storage (not curved)</li>
 <li>A bit complicated (ok, maybe a lot)</li>
+<li>Not super controllable</li>
+<li>Requires the PTO to be engaged in winding mode for much longer time than other methods would require</li>
 <li>
-<p>Not super controllable</p>
+<p>difficult (if not impossible) to score less than all of the blocks in the chamber</p>
 <p>Daren 12/09/25</p>
 </li>
 </ul>
