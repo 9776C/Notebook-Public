@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1695,6 +1695,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-analysis/game-strategy/strategy-ideas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ideas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2123,10 +2151,21 @@
 
 <details>
 <summary>Edit History</summary>
+<div style="display: flex; gap: 20px; align-items: flex-start; margin: 16px 0;">
+  <div style="flex-shrink: 0; position: relative; width: 180px; height: 180px;">
+    <div style="width: 100%; height: 100%; border-radius: 50%; background: conic-gradient(#1f77d2 0% 99.50372208436724%, #2e8b57 99.50372208436724% 100.0%);"></div>
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; background: transparent; border-radius: 50%;"></div>
+  </div>
+  <div style="flex: 1; padding-top: 10px;">
+    <div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 12px; height: 12px; background-color: #1f77d2; border-radius: 2px; margin-right: 8px;"></div><span style="font-size: 13px;">Daren: 99.5%</span></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 12px; height: 12px; background-color: #2e8b57; border-radius: 2px; margin-right: 8px;"></div><span style="font-size: 13px;">Linus: 0.5%</span></div>
+  </div>
+</div>
 <table>
   <tbody><tr><th>Date</th><th>Author</th></tr>
   <tr><td>2026-01-07</td><td>Daren</td></tr>
   <tr><td>2026-01-10</td><td>Daren</td></tr>
+  <tr><td>2026-01-18</td><td>Daren</td></tr>
+  <tr><td>2026-01-20</td><td>Daren</td></tr>
 </tbody></table>
 </details>
 
@@ -2143,7 +2182,8 @@
 <li>~~Hold 12 blocks (6 in each chamber)~~ Hold 10 blocks (5 in each chamber) (other constraints)</li>
 <li>Lightweight</li>
 </ul>
-<h1 id="brainstorm">Brainstorm:<a class="headerlink" href="#brainstorm" title="Permanent link">¶</a></h1>
+<h1 id="brainstormselectdesign">Brainstorm/Select/Design:<a class="headerlink" href="#brainstormselectdesign" title="Permanent link">¶</a></h1>
+<p>With integration with so many other systems you kinda have to design at the sometime as brainstorming to se if it is even viable.</p>
 <p>To actually make this we need to layout how it is going to work
 I have made a little diagram to visualize how i think this will go:
 <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/score-flow.png" data-desc-position="bottom"><img alt="score-flow" src="../images/score-flow.png"></a></p>
@@ -2194,8 +2234,112 @@ A solution to this is to use a <strong>trapezoidal four-bar linkage</strong> ins
 <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/trapezoidal-lever-motion.png" data-desc-position="bottom"><img alt="trapezoidal lever motion" src="../images/trapezoidal-lever-motion.png"></a></p>
 <p>After thinking about the integration with the color sorting and the intake this needs to be a lot more precise than "mess around until we find one that works" so i need to learn how Four-bar linkages work.</p>
 <h2 id="four-bar-linkage">Four-bar linkage<a class="headerlink" href="#four-bar-linkage" title="Permanent link">¶</a></h2>
-<h2 id="intakecolor-sorting-integration">Intake/color sorting integration<a class="headerlink" href="#intakecolor-sorting-integration" title="Permanent link">¶</a></h2>
+<p>I did some reading on Wikipedia and i sort of understand it now, just not enough to explain it to someone else (if you ever want to feel dumb, just go read a math or physics page on there it'll do the job). </p>
+<p>I have come up with a new motion for the lever:
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/new-lever-path.png" data-desc-position="bottom"><img alt="new lever path" src="../images/new-lever-path.png"></a>
+This mechanical wonder of a creation is very simple in execution, but took a long time to get it tweaked just right.
+It works so well because in the resting position it is perfectly folded out of the way:
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/out-of-the-way.png" data-desc-position="bottom"><img alt="out-of-the-way" src="../images/out-of-the-way.png"></a>
+We will likely design the chamber around the lever path because the required precision to change the path is in like 0.01" increments and the holes are every 0.5" so this is the closest we are gonna get.</p>
 <h2 id="pto-integration">PTO integration<a class="headerlink" href="#pto-integration" title="Permanent link">¶</a></h2>
+<h3 id="speed">Speed<a class="headerlink" href="#speed" title="Permanent link">¶</a></h3>
+<p>We need to figure out what speed we need the lever to rotate, Zach wants to be able to score 5 (or 6) blocks in 500ms.
+The lever has to rotate a quarter turn to score all the blocks in the chamber, and we have an input from the PTO of 200RPM (blue motor geared 3:1)</p>
+<p><strong>Target RPM:</strong>
+$$
+\text{RPM} =
+\frac{0.25\text{ rotations}}{0.5\text{ sec}} \cdot
+\frac{60\text{ sec}}{\text{min}} =
+$$
+$$
+\text{RPM} =
+\frac{0.25\text{ rotations}}{0.5\cancel{\text{ sec}}} \cdot
+\frac{60\cancel{\text{ sec}}}{1\text{ min}} =
+\frac{15\text{ rotations}}{0.5\text{ min}} =
+30 \text{ RPM}
+$$ 
+<strong>Input RPM → Target RPM:</strong>
+Because our input RPM is the same as a green motor (200 RPM) we can just steal the table from the <a href="../../drivetrain/speed/">drivetrain-speed</a></p>
+<table>
+<thead>
+<tr>
+<th>RPM</th>
+<th>1:1</th>
+<th>5:6</th>
+<th>4:5</th>
+<th>3:4</th>
+<th>2:3</th>
+<th>3:5</th>
+<th>1:2</th>
+<th>2:5</th>
+<th>1:3</th>
+<th>1:4</th>
+<th>1:5</th>
+<th>1:6</th>
+<th>1:7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>200</td>
+<td>166.7</td>
+<td>160</td>
+<td>150</td>
+<td>133.3</td>
+<td>120</td>
+<td>100</td>
+<td>80</td>
+<td>66.7</td>
+<td>50</td>
+<td>40</td>
+<td>33.3</td>
+<td>28.6</td>
+</tr>
+</tbody>
+</table>
+<p>We can see the closest gear ratio to this is a 1:6 ratio (12:72) that gives us 33.3 RPM which is definitely close enough.</p>
+<p>Using this gear ratio has its own problems though, because the high torque multiplication could cause the gears to slip if not mounted well</p>
+<h3 id="torque">Torque<a class="headerlink" href="#torque" title="Permanent link">¶</a></h3>
+<p>We need to make sure an 11W motor can push the blocks with a 12" lever arm.</p>
+<p><strong>Motor torque at 1:6 gear ratio:</strong>
+An 11W motor has a stall torque of ~1.67 N·m. With our 1:6 gear ratio:
+$$
+\text{Output Torque} =
+\text{Motor Torque} \cdot \text{Gear Ratio} =
+1.67\text{ N·m} \cdot 6 =
+10.02\text{ N·m}
+$$</p>
+<p><strong>Converting to inch-pounds:</strong>
+$$
+\text{Output Torque} =
+10.02\text{ N·m} \cdot
+\frac{8.851\text{ in·lb}}{1\text{ N·m}} =
+88.7\text{ in·lb}
+$$</p>
+<p><strong>Force at end of 12" lever:</strong>
+$$
+\text{Force} =
+\frac{\text{Torque}}{\text{Lever Length}} =
+\frac{88.7\text{ in·lb}}{12\text{ in}} =
+7.39\text{ lb}
+$$</p>
+<p><strong>Converting to Newtons:</strong>
+$$
+\text{Force} =
+7.39\text{ lb} \cdot
+\frac{4.448\text{ N}}{1\text{ lb}} =
+32.9\text{ N}
+$$</p>
+<p>So at stall, the lever can push with approximately <strong>7.4 lbs (32.9 N)</strong> of force at the end of the 12" arm.</p>
+<p>With this gear ratio looking at the lever placement vs the PTO input; it's kinda not in a good placement:
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/PTO-need-to-move.png" data-desc-position="bottom"><img alt="PTO-need-to-move" src="../images/PTO-need-to-move.png"></a>
+I was able to move the PTO output by flipping the motor around and everything else too.
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/moved-it.png" data-desc-position="bottom"><img alt="" src="../images/moved-it.png"></a>
+This makes the position much better for the lever gear:
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/better-spot.png" data-desc-position="bottom"><img alt="" src="../images/better-spot.png"></a></p>
+<h3 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">¶</a></h3>
+<p>We don't have any 72T gears</p>
 
 
 
@@ -2267,10 +2411,10 @@ A solution to this is to use a <strong>trapezoidal four-bar linkage</strong> ins
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
